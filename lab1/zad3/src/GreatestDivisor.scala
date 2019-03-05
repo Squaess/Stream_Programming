@@ -23,10 +23,10 @@ object GreatestDivisor {
   }
 
   def main(args: Array[String]): Unit = {
-    args.foreach( f = i =>
+    args.foreach( i =>
       try {
         /** Absolute in case of negative values */
-        val greatest_divisor: Int = gd(math.abs(i.toInt))
+        val greatest_divisor: Int = gd(i.toInt.abs)
         println(s"${i.toInt} : $greatest_divisor")
       } catch {
         case _: NumberFormatException => println("Could not convert '" + i + "' to int.");
