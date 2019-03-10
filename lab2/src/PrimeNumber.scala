@@ -1,10 +1,30 @@
 class PrimeNumber(val n: Int) {
 
-  private var primeNumbers = Array(1, 2, 3, 4)
+  private var primeNumbers = Array.fill(2)(true)
+  primeNumbers(0) = false
+  primeNumbers(1) = false
+  calculatePrimeNumbers(n)
 
   def calculatePrimeNumbers(n : Int): Unit = {
-    primeNumbers(1) = n
+    // this is for [0, n-1]
+    if (n < primeNumbers.length) return
+    primeNumbers = Array.fill(n+1)(true)
+    primeNumbers(0) = false
+    primeNumbers(1) = false
+    for {
+      i <- 2 until math.sqrt(primeNumbers.length).ceil.toInt
+      if primeNumbers(i)
+      j <- math.pow(i,2).toInt until primeNumbers.length by i
+      if primeNumbers(j)
+    } {
+      primeNumbers(j) = false
+    }
   }
 
-  def showNumber() = println(n)
+  def number(m:Int):Int = {
+    val primesInOrder = for (e <- primeNumbers.indices if primeNumbers(e)) yield e
+    primesInOrder(m-1)
+  }
+
+  def showNumber():Unit = println(n)
 }
