@@ -1,5 +1,5 @@
 class PrimeNumber(val n: Int) {
-
+  if ( n <= 0 ) throw new NumberFormatException(s"Value n='$n' should be greater then 0")
   private var primeNumbers = Array.fill(2)(true)
   primeNumbers(0) = false
   primeNumbers(1) = false
@@ -23,7 +23,7 @@ class PrimeNumber(val n: Int) {
 
   def number(m:Int):Int = {
     val primesInOrder = for (e <- primeNumbers.indices if primeNumbers(e)) yield e
-    primesInOrder(m-1)
+    primesInOrder(m)
   }
 
   def showNumber():Unit = println(n)
