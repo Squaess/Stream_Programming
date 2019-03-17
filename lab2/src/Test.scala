@@ -12,6 +12,7 @@ object Test {
       }
     } catch {
       case ex:NumberFormatException => println(s"Wrong argument. Must be positive integer\n$ex")
+      case ex:ArrayIndexOutOfBoundsException => println(s"Array seems to have no values.")
     }
   }
 }
