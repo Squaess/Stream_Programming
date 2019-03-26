@@ -1,0 +1,26 @@
+circle, square, rectangle, rombus, pentagon, hexagon
+
+abstract class Figure {
+ calculate_field()
+ calculate_perimeter()
+}
+
+abstract class Quadrangle extends Figure {
+    def calculate_perimiter() <- we know how to calculate this {}
+}
+
+class circle extends Figure {
+    def calculate_perimiter{} <- we know how to do this
+    def calculate_field{} <- we know how to do this
+}
+
+class square exntends Quadrangle {
+    one param
+}
+class pentagon extends figure {}
+class --||-- extends figure {}
+
+#############################
+in main
+scala Program c s r 10 5 3 30
+exception if we don't have figure for 't'
