@@ -1,3 +1,4 @@
-class Figure {
-
+abstract class Figure {
+  def field: Double
+  def perimeter: Double
 }
