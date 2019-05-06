@@ -1,11 +1,11 @@
-import scala.collection.mutable.Map
+import scala.collection.mutable
 
 class MisraGries(k:Int) {
   require(k>0)
 
-  val A: Map[Any, Int] = Map()
+  val A: mutable.Map[Any, Int] = mutable.Map()
 
-  def compute(str:Stream[Any]):Map[Any,Int] = {
+  def compute(str:Stream[Any]):mutable.Map[Any,Int] = {
     str.foreach(a => {
       if(A.contains(a)) {
         A(a) = A(a) + 1

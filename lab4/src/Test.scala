@@ -1,14 +1,22 @@
 object Test {
   def main(args: Array[String]): Unit = {
-    val e1 = new Employee("John", 123.6, 2)
 
-    val algo = new MisraGries(2)
-    val str = 1 #:: 4 #:: 5 #:: 4 #:: 4 #:: 5 #:: 4 #:: 4 #:: Stream.empty
+    val algo = new MisraGries(4)
     val str2 = new Employee("Johnyy", 123, 2) #::
                new Employee("Johnyy", 123, 2) #::
                new Employee("Dan", 333, 1) #::
+               new Car("red", 250) #::
+               new Car("blue", 500) #::
+               new Car("green", 300) #::
+               new Car("green", 300) #::
+               new Car("green", 300) #::
+               new Car("green", 300) #::
+               new Book("Bartosz", 2019) #::
+               new Book("Bartosz", 2019) #::
+               new Book("Bartosz", 2019) #::
+               new Book("Bartosz", 2019) #::
+               new Book("Bartosz", 2015) #::
                Stream.empty
-    println(algo.compute(str))
     println(algo.compute(str2))
 
   }
