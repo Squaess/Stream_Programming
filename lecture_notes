@@ -1,0 +1,32 @@
+28.05.2019
+
+Count distinct problem
+----------------------
+
+S = { a, b, a, c, d, e, b, c} - only 5 distinc elements from 8 all elements
+
+Task: Count distinc elements
+
+1. Remember all distinct elements
+2. (approximate strategy) We would like to store only `k` elements. Flajolet–Martin algorithm.
+
+Example for hash function that returns 4 bit string
+
+h(a) = 1010                     P[last == 0] = 1/2
+h(b) = 1011                     P[last == 1] = 1/2
+h(c) = 1000                     P[last == 00] = 1/2 * 1/2 = 1/4
+h(d) = 1101
+h(e) = 0100
+
+hash function that returns bit string of length `t`
+
+P[r last bits == 0] = 2^(-r)
+
+
+
+Distribution of frequencies of different elements
+-------------------------------------------------
+The Alon-Matias Szegedy Algorithm for second moments
+
+Lectures will be on the website.
+
