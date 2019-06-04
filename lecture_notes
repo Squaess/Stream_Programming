@@ -30,3 +30,43 @@ The Alon-Matias Szegedy Algorithm for second moments
 
 Lectures will be on the website.
 
+04.06.2019
+
+Counting Ones in a Window 
+
+10110011111100101
+
+N - size of window
+
+Problem: counting 1's in k last elements  k <= N
+
+Solution: TO traverse the last k elemenets and to count the 1's.
+
+We divide the window into backets consisting of:
+ - the timestamp of the right end
+ - the number of 1's must be a power of 2 in each bucket
+ ...101| 10110001| 0 |      11101|         1001         |  0    |    1    |    1       |0
+        ---------     -----------         -----                      -         -
+        two buckets of size 4      one bucket of size 2          two buckets of size 1
+at least one 
+bucket of size 8
+
+The Datar-Gionis-Indyk-Motwani Algorithm
+
+The rules of the division:
+ - The roght end of a bucket is always 1.
+ - every position with 1 is in some bucket
+ - no position is in more than one bucket
+ - there are one or two buckets of any given size
+ - All sizes must be a power of 2
+ - Buckets cannot decrease in size as we move to the left
+
+ !! Decaying windows
+ ------------------
+
+ Example:
+    The popularity of the movies.
+
+    1. The tickets for the movie are not sold currently 
+    2. The move sold n tickets in each of the last 10 weeks
+    3. The movie sold 2n tickets in last week but nothing in previous weeks
